@@ -1,0 +1,94 @@
+"use client";
+
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+import Image from "next/image";
+import Link from "next/link";
+import { CiLocationOn } from "react-icons/ci";
+import { FiPhoneCall } from "react-icons/fi";
+import { HiOutlineMail } from "react-icons/hi";
+
+const Footer = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
+  return (
+    <footer
+      className="bg-[#DCDFE4] text-black flex flex-col items-center px-6 py-12 space-y-8"
+      data-aos="fade-up"
+    >
+      <div
+        className="w-full max-w-6xl flex flex-wrap justify-between gap-10"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        {/* Logo + Text */}
+        <div className="flex flex-col max-w-xs" data-aos="fade-right">
+          <Image
+            src="https://res.cloudinary.com/dlzjjxtsd/image/upload/proda-removebg-preview_gjinxk.png"
+            alt="Proda Logo"
+            width={200}
+            height={200}
+            className="w-32 h-auto mb-4"
+          />
+          <p className="text-black leading-relaxed">
+            Empowering students to become future leaders through exceptional
+            education and character development.
+          </p>
+        </div>
+
+        {/* Quick Links */}
+        <div className="flex flex-col space-y-3" data-aos="zoom-in" data-aos-delay="100">
+          <h3 className="text-lg font-semibold text-white mb-2 border-b border-white/30 pb-1">
+            Quick Links
+          </h3>
+          <Link href="/About" className="hover:text-amber-300 transition">About</Link>
+          <Link href="/Academics" className="hover:text-amber-300 transition">Academics</Link>
+          <Link href="/Admission" className="hover:text-amber-300 transition">Admissions</Link>
+        </div>
+
+        {/* Resources */}
+        <div className="flex flex-col space-y-3" data-aos="zoom-in" data-aos-delay="200">
+          <h3 className="text-lg font-semibold text-white mb-2 border-b border-white/30 pb-1">
+            Resources
+          </h3>
+          <Link href="/Calendar" className="hover:text-amber-300 transition">School Calendar</Link>
+          <Link href="/Gallery" className="hover:text-amber-300 transition">Photo Gallery</Link>
+          <Link href="/News" className="hover:text-amber-300 transition">News & Events</Link>
+        </div>
+
+        {/* Contact */}
+        <div className="flex flex-col space-y-3 max-w-sm" data-aos="fade-left" data-aos-delay="150">
+          <h3 className="text-lg font-semibold text-white mb-2 border-b border-white/30 pb-1">
+            Contact Us
+          </h3>
+          <p className="flex items-start gap-2 text-black">
+            <CiLocationOn className="text-amber-300 text-xl mt-1" />
+            Kegbejo House, 34A Latona Street, Osogbo, Osun State
+          </p>
+          <p className="flex items-center gap-2 text-black">
+            <HiOutlineMail className="text-amber-300 text-xl" />
+            info@prodaacademy.sch.ng
+          </p>
+          <p className="flex items-center gap-2 text-black">
+            <FiPhoneCall className="text-amber-300 text-xl" />
+            08134139785, 08033546188
+          </p>
+        </div>
+      </div>
+
+      <hr className="w-full border-t border-black/30 my-6" data-aos="fade-in" data-aos-delay="300" />
+
+      <div className="text-center text-black text-sm" data-aos="fade-up" data-aos-delay="400">
+        <p>
+          &copy; {new Date().getFullYear()} Proda Primary & Secondary School. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
