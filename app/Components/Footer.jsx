@@ -17,7 +17,7 @@ const Footer = () => {
 
   return (
     <footer
-      className="bg-[#DCDFE4] text-black flex flex-col items-center px-6 py-12 space-y-8"
+      className="bg-[#673E73] text-white flex flex-col items-center px-6 py-12 space-y-8"
       data-aos="fade-up"
     >
       <div
@@ -28,13 +28,13 @@ const Footer = () => {
         {/* Logo + Text */}
         <div className="flex flex-col max-w-xs" data-aos="fade-right">
           <Image
-            src="https://res.cloudinary.com/dlzjjxtsd/image/upload/proda-removebg-preview_gjinxk.png"
+            src="https://res.cloudinary.com/dlzjjxtsd/image/upload/428682794_378498488269521_3160629597398820074_n.jpg_c5wkae.jpg"
             alt="Proda Logo"
             width={200}
             height={200}
             className="w-32 h-auto mb-4"
           />
-          <p className="text-black leading-relaxed">
+          <p className="text-white leading-relaxed">
             Empowering students to become future leaders through exceptional
             education and character development.
           </p>
@@ -45,9 +45,9 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-white mb-2 border-b border-white/30 pb-1">
             Quick Links
           </h3>
-          <Link href="/About" className="hover:text-amber-300 transition">About</Link>
-          <Link href="/Academics" className="hover:text-amber-300 transition">Academics</Link>
-          <Link href="/Admission" className="hover:text-amber-300 transition">Admissions</Link>
+          <Link href="/About" className="hover:text-[#E57918] transition">About</Link>
+          <Link href="/Academics" className="hover:text-[#E57918] transition">Academics</Link>
+          <Link href="/Admission" className="hover:text-[#E57918] transition">Admissions</Link>
         </div>
 
         {/* Resources */}
@@ -55,9 +55,9 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-white mb-2 border-b border-white/30 pb-1">
             Resources
           </h3>
-          <Link href="/Calendar" className="hover:text-amber-300 transition">School Calendar</Link>
-          <Link href="/Gallery" className="hover:text-amber-300 transition">Photo Gallery</Link>
-          <Link href="/News" className="hover:text-amber-300 transition">News & Events</Link>
+          <Link href="/Calendar" className="hover:text-[#E57918] transition">School Calendar</Link>
+          <Link href="/Gallery" className="hover:text-[#E57918] transition">Photo Gallery</Link>
+          <Link href="/News" className="hover:text-[#E57918] transition">News & Events</Link>
         </div>
 
         {/* Contact */}
@@ -66,15 +66,15 @@ const Footer = () => {
             Contact Us
           </h3>
           <p className="flex items-start gap-2 text-black">
-            <CiLocationOn className="text-amber-300 text-xl mt-1" />
+            <CiLocationOn className="text-[#E57918] text-xl mt-1" />
             Kegbejo House, 34A Latona Street, Osogbo, Osun State
           </p>
           <p className="flex items-center gap-2 text-black">
-            <HiOutlineMail className="text-amber-300 text-xl" />
+            <HiOutlineMail className="text-[#E57918] text-xl" />
             info@prodaacademy.sch.ng
           </p>
           <p className="flex items-center gap-2 text-black">
-            <FiPhoneCall className="text-amber-300 text-xl" />
+            <FiPhoneCall className="text-[#E57918] text-xl" />
             08134139785, 08033546188
           </p>
         </div>
@@ -82,7 +82,7 @@ const Footer = () => {
 
       <hr className="w-full border-t border-black/30 my-6" data-aos="fade-in" data-aos-delay="300" />
 
-      <div className="text-center text-black text-sm" data-aos="fade-up" data-aos-delay="400">
+      <div className="text-center text-white text-sm" data-aos="fade-up" data-aos-delay="400">
         <p>
           &copy; {new Date().getFullYear()} Proda Primary & Secondary School. All rights reserved.
         </p>

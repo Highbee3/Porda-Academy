@@ -10,29 +10,43 @@ const Navbar = () => {
   return (
     <>
       {/* NAVBAR TOP */}
-      <div className="w-full h-20 bg-[#673E73] flex items-center justify-between px-6 md:px-11 backdrop-blur-md border-b border-white/10 fixed top-0 z-50">
+      <div className="w-full h-23 p-4 bg-[#673E73] flex items-center justify-between px-6 md:px-11 backdrop-blur-md border-b border-white/10 fixed top-0 z-50">
         {/* LOGO */}
-        <div className="flex items-center bg-white rounded-full px-2 py-1">
-          <Link href="/" className="text-black font-semibold text-lg">
+        <div className="flex items-center rounded-full px-1 p-10 ">
+          <Link href="/">
             <Image
-              src="https://res.cloudinary.com/dlzjjxtsd/image/upload/proda-removebg-preview_gjinxk.png"
+              src="https://res.cloudinary.com/dlzjjxtsd/image/upload/428682794_378498488269521_3160629597398820074_n.jpg_c5wkae.jpg"
               alt="Logo"
               width={60}
               height={60}
-              className="object-cover rounded-md h-16 w-16"
+              className=" rounded-md h-20 w-20   object-contain"
             />
           </Link>
         </div>
 
         {/* DESKTOP MENU */}
         <ul className="hidden md:flex space-x-6 text-white font-medium text-sm">
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/About">About</Link></li>
-          <li><Link href="/Academics">Academics</Link></li>
-          <li><Link href="/Admission">Admissions</Link></li>
-          <li><Link href="/News">News</Link></li>
-          <li><Link href="/Calendar">Calendar</Link></li>
-          <li><Link href="/Gallery">Gallery</Link></li>
+          <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
+            <Link href="/About">About</Link>
+          </li>
+          <li>
+            <Link href="/Academics">Academics</Link>
+          </li>
+          <li>
+            <Link href="/Admission">Admissions</Link>
+          </li>
+          <li>
+            <Link href="/News">News</Link>
+          </li>
+          <li>
+            <Link href="/Calendar">Calendar</Link>
+          </li>
+          <li>
+            <Link href="/Gallery">Gallery</Link>
+          </li>
         </ul>
 
         {/* DESKTOP APPLY BUTTON */}
@@ -62,15 +76,47 @@ const Navbar = () => {
       <ul
         className={`fixed top-20 right-0 h-full w-64 text-white flex flex-col items-center py-20 space-y-6 font-medium md:hidden
         bg-[#673E73] shadow-xl z-50 transition-all duration-500 ease-in-out
-        ${open ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"}`}
+        ${
+          open
+            ? "translate-x-0 opacity-100"
+            : "translate-x-full opacity-0 pointer-events-none"
+        }`}
       >
-        <li><Link href="/" onClick={() => setOpen(false)}>Home</Link></li>
-        <li><Link href="/About" onClick={() => setOpen(false)}>About</Link></li>
-        <li><Link href="/Academics" onClick={() => setOpen(false)}>Academics</Link></li>
-        <li><Link href="/Admission" onClick={() => setOpen(false)}>Admissions</Link></li>
-        <li><Link href="/News" onClick={() => setOpen(false)}>News</Link></li>
-        <li><Link href="/Calendar" onClick={() => setOpen(false)}>Calendar</Link></li>
-        <li><Link href="/Gallery" onClick={() => setOpen(false)}>Gallery</Link></li>
+        <li>
+          <Link href="/" onClick={() => setOpen(false)}>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link href="/About" onClick={() => setOpen(false)}>
+            About
+          </Link>
+        </li>
+        <li>
+          <Link href="/Academics" onClick={() => setOpen(false)}>
+            Academics
+          </Link>
+        </li>
+        <li>
+          <Link href="/Admission" onClick={() => setOpen(false)}>
+            Admissions
+          </Link>
+        </li>
+        <li>
+          <Link href="/News" onClick={() => setOpen(false)}>
+            News
+          </Link>
+        </li>
+        <li>
+          <Link href="/Calendar" onClick={() => setOpen(false)}>
+            Calendar
+          </Link>
+        </li>
+        <li>
+          <Link href="/Gallery" onClick={() => setOpen(false)}>
+            Gallery
+          </Link>
+        </li>
 
         <button className="bg-[#0B60EA] text-white px-4 py-2 rounded-lg cursor-pointer text-sm shadow-md">
           <Link href="/Admission">Apply Now</Link>
