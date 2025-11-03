@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/Components/Navbar";
 import Footer from "@/app/Components/Footer";
-// import Loader from "@/app/Components/Loader";
+import Loader from "@/app/Components/Loader";
 import PageTransitionWrapper from "@/app/Components/PageTransitionWrapper"; // 👈 NEW client wrapper
 
 const geistSans = Geist({
@@ -31,7 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
-        {/* <Loader /> */}
+        <Loader />
         <Navbar />
         <PageTransitionWrapper>{children}</PageTransitionWrapper>
         <Footer />

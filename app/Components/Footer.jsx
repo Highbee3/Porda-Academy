@@ -9,6 +9,8 @@ import Link from "next/link";
 import { CiLocationOn } from "react-icons/ci";
 import { FiPhoneCall } from "react-icons/fi";
 import { HiOutlineMail } from "react-icons/hi";
+import { FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
+
 
 const Footer = () => {
   useEffect(() => {
@@ -30,9 +32,9 @@ const Footer = () => {
           <Image
             src="https://res.cloudinary.com/dlzjjxtsd/image/upload/428682794_378498488269521_3160629597398820074_n.jpg_c5wkae.jpg"
             alt="Proda Logo"
-            width={200}
-            height={200}
-            className="w-32 h-auto mb-4"
+            width={60}
+            height={60}
+            className="w-20 h-auto mb-4"
           />
           <p className="text-white leading-relaxed">
             Empowering students to become future leaders through exceptional
@@ -65,20 +67,49 @@ const Footer = () => {
           <h3 className="text-lg font-semibold text-white mb-2 border-b border-white/30 pb-1">
             Contact Us
           </h3>
-          <p className="flex items-start gap-2 text-black">
+          <p className="flex items-start gap-2 text-white">
             <CiLocationOn className="text-[#E57918] text-xl mt-1" />
             Kegbejo House, 34A Latona Street, Osogbo, Osun State
           </p>
-          <p className="flex items-center gap-2 text-black">
+          <p className="flex items-center gap-2 text-white">
             <HiOutlineMail className="text-[#E57918] text-xl" />
             info@prodaacademy.sch.ng
           </p>
-          <p className="flex items-center gap-2 text-black">
+          <p className="flex items-center gap-2 text-white">
             <FiPhoneCall className="text-[#E57918] text-xl" />
             08134139785, 08033546188
           </p>
         </div>
       </div>
+      
+<div className="flex gap-4 mt-8" data-aos="zoom-in" data-aos-delay="250">
+  <Link
+    href="https://facebook.com"
+className="w-10 h-10 flex items-center justify-center rounded-full bg-[#FF7A3C] text-white hover:bg-white/20 hover:text-[#673E73] backdrop-blur-sm transition-all duration-300"
+  >
+    <FaFacebookF size={20} />
+  </Link>
+  <Link
+    href="https://instagram.com"
+className="w-10 h-10 flex items-center justify-center rounded-full bg-[#FF7A3C] text-white hover:bg-white/20 hover:text-[#673E73] backdrop-blur-sm transition-all duration-300"
+  >
+    <FaInstagram size={20} />
+  </Link>
+  <Link
+    href="https://twitter.com"
+className="w-10 h-10 flex items-center justify-center rounded-full bg-[#FF7A3C] text-white hover:bg-white/20 hover:text-[#673E73] backdrop-blur-sm transition-all duration-300"
+  >
+    <FaTwitter size={20} />
+  </Link>
+  <Link
+    href="https://wa.me/08134139785"
+className="w-10 h-10 flex items-center justify-center rounded-full bg-[#FF7A3C] text-white hover:bg-white/20 hover:text-[#673E73] backdrop-blur-sm transition-all duration-300"
+  >
+    <FaWhatsapp size={20} />
+  </Link>
+</div>
+
+  
 
       <hr className="w-full border-t border-black/30 my-6" data-aos="fade-in" data-aos-delay="300" />
 

@@ -68,7 +68,7 @@ export default function News() {
       <section className="py-20 px-6 md:px-20">
         <h2
           data-aos="fade-up"
-          className="text-center text-3xl md:text-4xl font-bold text-blue-700 mb-12"
+          className="text-center text-3xl md:text-4xl font-bold text-[#673E73] mb-12"
         >
           Our Latest Stories
         </h2>
@@ -93,7 +93,7 @@ export default function News() {
                 </h3>
                 <p className="text-sm text-gray-500 mb-3">{item.date}</p>
                 <p className="text-gray-600 text-sm mb-4">{item.desc}</p>
-                <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition">
+                <button className="px-4 py-2 bg-[#673E73] hover:bg-[#673E71] text-white text-sm rounded-lg transition">
                   Read More
                 </button>
               </div>
@@ -114,7 +114,7 @@ export default function News() {
           Follow our updates, join our events, and celebrate every success with
           Proda Academy — where excellence begins.
         </p>
-        <button className="px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg hover:bg-gray-100 transition">
+        <button className="px-6 py-3 bg-white text-[#673E73] font-semibold rounded-lg hover:bg-gray-100 transition">
           Visit Our Blog
         </button>
       </section>

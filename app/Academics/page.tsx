@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from 'next/image';
-
+import Link from 'next/link';
 export default function Academics() {
   useEffect(() => {
     AOS.init({
@@ -51,7 +51,7 @@ export default function Academics() {
       <section className="py-20 px-8 md:px-20 bg-white text-center">
         <h2
           data-aos="fade-down"
-          className="text-3xl md:text-4xl font-bold text-blue-700 mb-6"
+          className="text-3xl md:text-4xl font-bold text-[#673E73] mb-6"
         >
           Our Academic Philosophy
         </h2>
@@ -68,7 +68,7 @@ export default function Academics() {
       {/* PROGRAMS OFFERED */}
       <section className="py-20 px-6 md:px-20 bg-gray-100">
         <h2
-          className="text-center text-3xl md:text-4xl font-bold text-blue-700 mb-12"
+          className="text-center text-3xl md:text-4xl font-bold text-[#673E73] mb-12"
           data-aos="zoom-in"
         >
           Academic Divisions
@@ -177,9 +177,9 @@ export default function Academics() {
           <p className="text-gray-600 max-w-2xl mx-auto mb-6">
             Discover a world-class education designed to prepare your child for success — academically, morally, and socially.
           </p>
-          <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-md transition">
+          <Link href="/Admission" className="px-6 py-3 bg-[#673E73] hover:bg-[#673E72] text-white rounded-lg shadow-md transition">
             Explore Admissions
-          </button>
+          </Link>
         </motion.div>
       </section>
     </div>

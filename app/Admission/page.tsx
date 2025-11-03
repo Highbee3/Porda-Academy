@@ -44,7 +44,7 @@ export default function Admission() {
       <section className="py-20 px-6 md:px-20 bg-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div data-aos="fade-right">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-700 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#673E73] mb-6">
               Why Choose Proda Academy?
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6">
@@ -77,7 +77,7 @@ export default function Admission() {
       <section className="py-20 px-6 md:px-20 bg-gray-100 text-center">
         <h2
           data-aos="fade-up"
-          className="text-3xl md:text-4xl font-bold text-blue-700 mb-10"
+          className="text-3xl md:text-4xl font-bold text-[#673E73] mb-10"
         >
           Admission Process
         </h2>
@@ -107,7 +107,7 @@ export default function Admission() {
               data-aos={item.aos}
               className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-500"
             >
-              <div className="text-5xl text-blue-600 font-bold mb-4">
+              <div className="text-5xl text-[#673E73] font-bold mb-4">
                 {item.step}
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-3">
@@ -124,7 +124,7 @@ export default function Admission() {
         <div className="max-w-5xl mx-auto text-center">
           <h2
             data-aos="fade-down"
-            className="text-3xl md:text-4xl font-bold text-blue-700 mb-6"
+            className="text-3xl md:text-4xl font-bold text-[#673E73] mb-6"
           >
             Admission Requirements
           </h2>
@@ -161,7 +161,7 @@ export default function Admission() {
           </p>
           <button
             onClick={() => setShowForm(true)}
-            className="px-8 py-3 bg-white text-blue-700 font-semibold rounded-lg shadow-md hover:bg-gray-100 transition"
+            className="px-8 py-3 bg-white text-[#673E73] font-semibold rounded-lg shadow-md hover:bg-gray-100 transition"
           >
             Apply Now
           </button>

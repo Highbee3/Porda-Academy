@@ -42,7 +42,7 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-6">
             <button className="bg-[#673e73] text-white py-2.5 px-6 rounded-lg cursor-pointer text-sm md:text-base hover:bg-[#9B4AD0] transition-colors duration-300">
-              <Link href="/Admissions">Apply Now</Link>
+              <Link href="/Admission">Apply Now</Link>
             </button>
             <button className="border-2 border-[#673e73] text-black py-2.5 px-6 rounded-lg cursor-pointer text-sm md:text-base">
               <Link href="/About">Learn More</Link>
@@ -72,7 +72,7 @@ export default function Home() {
             className="flex flex-col items-center bg-amber-50 rounded-2xl p-8 shadow-lg w-72 sm:w-80 hover:scale-105 hover:bg-white hover:shadow-2xl transition-all duration-100"
             data-aos="zoom-in"
           >
-            <div className="text-[#0B60EA] text-4xl mb-2">{item.icon}</div>
+            <div className="text-[#de7a0b] text-4xl mb-2">{item.icon}</div>
             <h2 className="font-semibold text-black text-2xl">{item.number}</h2>
             <p className="text-black">{item.text}</p>
           </div>
@@ -157,7 +157,7 @@ export default function Home() {
               href="/Academics"
               className="flex items-center font-semibold text-lg mt-4 p-2"
             >
-              <GiTeacher className="text-[#0B60EA] mr-2" /> Kindergarten
+              <GiTeacher className="text-[#673E73] mr-2" /> Kindergarten
               Education
             </Link>
             <p className="p-1">
@@ -183,7 +183,7 @@ export default function Home() {
               href="/Academics"
               className="flex items-center font-semibold text-lg mt-4 p-2"
             >
-              <GiOpenBook className="text-[#0B60EA] mr-2" /> Nursery Education
+              <GiOpenBook className="text-[#673E73] mr-2" /> Nursery Education
             </Link>
             <p className="p-1">
               Our nursery program emphasizes early literacy, numeracy, and
@@ -208,7 +208,7 @@ export default function Home() {
               href="/Academics"
               className="flex items-center font-semibold text-lg mt-4 p-2"
             >
-              <MdSchool className="text-[#0B60EA] mr-2" /> Primary Education
+              <MdSchool className="text-[#673E73] mr-2" /> Primary Education
             </Link>
             <p className="p-1">
               Our primary education program builds strong foundations in
@@ -233,7 +233,7 @@ export default function Home() {
               href="/Academics"
               className="flex items-center font-semibold text-lg mt-4 p-2"
             >
-              <GiGraduateCap className="text-[#0B60EA] mr-2" /> Secondary
+              <GiGraduateCap className="text-[#673E73] mr-2" /> Secondary
               Education
             </Link>
             <p className="p-1">

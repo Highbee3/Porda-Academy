@@ -107,7 +107,7 @@ const About = () => {
       viewport={{ once: true }}
       className="text-center md:text-left"
     >
-      <h2 className="text-3xl font-bold text-blue-900 mb-4">
+      <h2 className="text-3xl font-bold text-[#673E73] mb-4">
         Message from the Founder
       </h2>
 
@@ -196,7 +196,7 @@ const About = () => {
                 className="w-full h-70 object-cover "
               />
               <div className="p-4">
-                <h3 className="text-lg font-semibold text-blue-900">
+                <h3 className="text-lg font-semibold text-[#673E73]">
                   {member.name}
                 </h3>
                 <p className="text-amber-600 text-sm">{member.role}</p>

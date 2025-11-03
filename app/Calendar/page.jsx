@@ -72,7 +72,7 @@ export default function Calendar() {
       {/* EVENTS SECTION */}
       <section className="py-20 px-6 md:px-20 bg-white">
         <h2
-          className="text-center text-3xl md:text-4xl font-bold text-blue-700 mb-12"
+          className="text-center text-3xl md:text-4xl font-bold text-[#673E73] mb-12"
           data-aos="fade-up"
         >
           Upcoming Events & Activities
@@ -96,13 +96,13 @@ export default function Calendar() {
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">
                   {event.title}
                 </h3>
-                <p className="text-sm text-blue-600 font-medium mb-3">
+                <p className="text-sm text-[#673E73] font-medium mb-3">
                   {event.date}
                 </p>
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                   {event.desc}
                 </p>
-                <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition">
+                <button className="px-4 py-2 bg-[#673E73] hover:bg-[#673E73] text-white text-sm rounded-lg transition">
                   Add to Calendar
                 </button>
               </div>
@@ -122,7 +122,7 @@ export default function Calendar() {
         <p className="max-w-2xl mx-auto mb-6 text-white/90">
           Stay connected to every milestone and celebration at Proda Academy. Subscribe to our newsletter or sync our academic calendar.
         </p>
-        <button className="px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg hover:bg-gray-100 transition">
+        <button className="px-6 py-3 bg-white text-[#673E73] font-semibold rounded-lg hover:bg-gray-100 transition">
           Subscribe Now
         </button>
       </section>

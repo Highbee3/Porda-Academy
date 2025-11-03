@@ -28,9 +28,9 @@ const Gallery = () => {
   return (
     <div className="w-full min-h-screen bg-gray-50 text-gray-800 py-20 px-6 md:px-20">
       {/* Header Section */}
-      <div className="text-center mb-14">
+      <div className="text-center mb-16">
         <h1
-          className="text-4xl md:text-5xl font-bold text-blue-700 mb-4"
+          className="text-4xl md:text-5xl font-bold text-[#673E73] mb-20 mt-8"
           data-aos="fade-down"
         >
           Our School Gallery
@@ -74,7 +74,7 @@ const Gallery = () => {
         <p className="text-gray-600 max-w-xl mx-auto mb-6">
           From classroom learning to extracurricular adventures — our students shine in every area of life.
         </p>
-        <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-md transition">
+        <button className="px-6 py-3 bg-[#673E73] hover:bg-[#673E73] text-white rounded-lg shadow-md transition">
           Learn More About Our Programs
         </button>
       </div>

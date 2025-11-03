@@ -17,8 +17,8 @@ const Navbar = () => {
             <Image
               src="https://res.cloudinary.com/dlzjjxtsd/image/upload/428682794_378498488269521_3160629597398820074_n.jpg_c5wkae.jpg"
               alt="Logo"
-              width={60}
-              height={60}
+              width={300}
+              height={300}
               className=" rounded-md h-20 w-20   object-contain"
             />
           </Link>
@@ -118,7 +118,7 @@ const Navbar = () => {
           </Link>
         </li>
 
-        <button className="bg-[#0B60EA] text-white px-4 py-2 rounded-lg cursor-pointer text-sm shadow-md">
+        <button className=" text-white px-4 py-2 rounded-lg cursor-pointer text-sm shadow-md">
           <Link href="/Admission">Apply Now</Link>
         </button>
       </ul>
