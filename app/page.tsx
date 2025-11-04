@@ -1,9 +1,13 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "animate.css";
+
+// icons
 import { LiaMedalSolid } from "react-icons/lia";
 import { FiUsers, FiBookOpen } from "react-icons/fi";
 import { RiGraduationCapLine } from "react-icons/ri";
@@ -12,59 +16,210 @@ import { GiOpenBook } from "react-icons/gi";
 import { GiGraduateCap } from "react-icons/gi";
 import { MdSchool } from "react-icons/md";
 
+// Swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, EffectFade } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+
 export default function Home() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
+  // --- Sequential counter state ---
+  const [years, setYears] = useState<number>(0);
+  const [students, setStudents] = useState<number>(0);
+  const [programs, setPrograms] = useState<number>(0);
+  const [graduation, setGraduation] = useState<number>(0);
+
+  // helper: animate from 0 -> target over duration ms using requestAnimationFrame
+  const animateValue = (
+    target: number,
+    duration: number,
+    setter: (v: number) => void,
+    isMountedRef: { current: boolean }
+  ) =>
+    new Promise<void>((resolve) => {
+      const start = performance.now();
+      const tick = (now: number) => {
+        if (!isMountedRef.current) return resolve(); // stop if component unmounted
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const current = Math.floor(target * progress);
+        setter(current);
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          setter(target); // ensure final value
+          resolve();
+        }
+      };
+      requestAnimationFrame(tick);
+    });
+
+  useEffect(() => {
+    const isMountedRef = { current: true };
+
+    (async () => {
+      const perCounterDuration = 1200; // ms
+      // animate sequentially
+      await animateValue(
+        25,
+        perCounterDuration,
+        (v) => isMountedRef.current && setYears(v),
+        isMountedRef
+      );
+      await animateValue(
+        1200,
+        perCounterDuration,
+        (v) => isMountedRef.current && setStudents(v),
+        isMountedRef
+      );
+      await animateValue(
+        15,
+        perCounterDuration,
+        (v) => isMountedRef.current && setPrograms(v),
+        isMountedRef
+      );
+      await animateValue(
+        98,
+        perCounterDuration,
+        (v) => isMountedRef.current && setGraduation(v),
+        isMountedRef
+      );
+    })();
+
+    return () => {
+      // signal stop for any in-flight animation frames
+      isMountedRef.current = false;
+      // reset values if you want
+      // setYears(0); setStudents(0); setPrograms(0); setGraduation(0);
+    };
+  }, []);
+
+  const currentValues = [years, students, programs, graduation];
+
+  // --- Slides ---
+  const slides = [
+    {
+      image:
+        "https://res.cloudinary.com/dlzjjxtsd/image/upload/GFrp1TnXgAAnnDf_ck69ze.jpg",
+      title: "Empowering Future Leaders Through Excellence",
+      subtitle:
+        "Inspiring young minds to achieve greatness through innovative education and character-building.",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/dlzjjxtsd/image/upload/472715374_636609269027999_6169041531565346115_n.jpg_k687gu.jpg",
+      title: "Discover the Joy of Learning",
+      subtitle:
+        "A holistic approach to academics, arts, and athletic development.",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/dlzjjxtsd/image/upload/469058486_599347539432610_7374410679488712494_n.jpg_ws4fdq.jpg",
+      title: "Where Every Student Matters",
+      subtitle: "A nurturing environment for growth, creativity, and success.",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/dlzjjxtsd/image/upload/480547825_619161950869839_1169411478869799599_n.jpg_ivufcf.jpg",
+      title: "Building a Bright and Confident Generation",
+      subtitle:
+        "We prepare students to excel academically and socially in a changing world.",
+    },
+  ];
+
   return (
-        <main className="overflow-x-hidden">
-    <div className="relative flex flex-col md:flex-row min-h-screen bg-gray-100">
-        <Image
-          src="https://res.cloudinary.com/dlzjjxtsd/image/upload/GFrp1TnXgAAnnDf_ck69ze.jpg"
-          alt="Background Image"
-          width={1920}
-          height={1080}
-          className="absolute inset-0 w-full h-full object-cover opacity-35"
-        />
+    <main className="overflow-x-hidden">
+      {/* --- Prevent slide stacking (only active slide visible) --- */}
+      <style jsx global>{`
+        .swiper-slide {
+          opacity: 0 !important;
+          visibility: hidden !important;
+        }
+        .swiper-slide-active {
+          opacity: 1 !important;
+          visibility: visible !important;
+        }
+        .swiper,
+        .swiper-wrapper,
+        .swiper-slide {
+          height: 100vh;
+        }
+      `}</style>
 
-        <div
-          className="relative z-10 flex flex-col items-center justify-center text-center px-6 w-full md:px-20 enter min-h-screen"
-          data-aos="fade-up"
-        >
-          <h1 className="text-black text-3xl md:text-5xl font-bold mb-4 leading-tight">
-            Empowering Future Leaders Through Excellence
-          </h1>
-          <p className="text-black max-w-2xl text-base md:text-lg text-center">
-            Welcome to Proda Primary & Secondary School, where we nurture
-            academic excellence, character development, and lifelong learning in
-            a supportive community.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 mt-6">
-            <button className="bg-[#673e73] text-white py-2.5 px-6 rounded-lg cursor-pointer text-sm md:text-base hover:bg-[#9B4AD0] transition-colors duration-300">
-              <Link href="/Admission">Apply Now</Link>
-            </button>
-            <button className="border-2 border-[#673e73] text-black py-2.5 px-6 rounded-lg cursor-pointer text-sm md:text-base">
-              <Link href="/About">Learn More</Link>
-            </button>
-          </div>
-        </div>
-      </div>
+      {/* --- HERO (Left-aligned) --- */}
+      <Swiper
+        modules={[Autoplay, Pagination, EffectFade]}
+        effect="fade"
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        loop
+        pagination={{ clickable: true }}
+        navigation
+        className="w-full h-screen"
+      >
+        {slides.map((slide, idx) => (
+          <SwiperSlide key={idx} className="relative">
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              fill
+              className="object-cover opacity-60"
+              priority
+            />
 
-      {/* Stats Section */}
-      <div className="bg-amber-50 w-full flex  gap-6 items-center justify-center text-center p-6 md:p-12 md:flex-row flex-col">
+            <div className="absolute inset-0 bg-black/55 flex items-center">
+              <div className="w-full flex flex-col items-center justify-center px-6 md:px-16 text-center text-white">
+                <h1 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight w-full animate__animated animate__fadeInLeft">
+                  {slide.title}
+                </h1>
+
+                <p className="mb-6 text-sm md:text-lg text-white/90 max-w-lg animate__animated animate__fadeInLeft animate__delay-1s">
+                  {slide.subtitle}
+                </p>
+
+                <div className="flex gap-4 mb-6 animate__animated animate__fadeInLeft animate__delay-2s">
+                  <Link
+                    href="/Admission"
+                    className="inline-block bg-[#673e73] hover:bg-[#9B4AD0] text-white py-2.5 px-5 rounded-md text-sm md:text-base transition"
+                  >
+                    Apply Now
+                  </Link>
+
+                  <Link
+                    href="/About"
+                    className="inline-block border-2 border-[#673e73] text-white py-2.5 px-5 rounded-md text-sm md:text-base hover:bg-[#673e73] transition"
+                  >
+                    Learn More
+                  </Link>
+                </div>
+
+                <div className="text-sm text-white/70 hidden md:block">
+                  Join our community of learners.
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* --- STATS (with working sequential counters) --- */}
+      <div className="bg-amber-50 w-full flex gap-6 items-center justify-center text-center p-6 md:p-12 md:flex-row flex-col">
         {[
           {
             icon: <LiaMedalSolid />,
-            number: "25+",
-            text: "Years of Excellence",
+            suffix: "+",
+            label: "Years of Excellence",
           },
-          { icon: <FiUsers />, number: "1,200+", text: "Students Enrolled" },
-          { icon: <FiBookOpen />, number: "15+", text: "Academic Programs" },
+          { icon: <FiUsers />, suffix: "+", label: "Students Enrolled" },
+          { icon: <FiBookOpen />, suffix: "+", label: "Academic Programs" },
           {
             icon: <RiGraduationCapLine />,
-            number: "98%",
-            text: "Graduation Rate",
+            suffix: "%",
+            label: "Graduation Rate",
           },
         ].map((item, i) => (
           <div
@@ -73,16 +228,20 @@ export default function Home() {
             data-aos="zoom-in"
           >
             <div className="text-[#de7a0b] text-4xl mb-2">{item.icon}</div>
-            <h2 className="font-semibold text-black text-2xl">{item.number}</h2>
-            <p className="text-black">{item.text}</p>
+            <h2 className="font-semibold text-black text-2xl">
+              {i === 1
+                ? currentValues[i].toLocaleString() + item.suffix
+                : currentValues[i] + item.suffix}
+            </h2>
+            <p className="text-black">{item.label}</p>
           </div>
         ))}
       </div>
 
-      {/* Mission Section */}
-      <div className="w-full bg-amber-50 flex flex-col space-x-4 md:flex-row items-center justify-center text-black p-10 gap-18 md:gap-16">
+      {/* --- MISSION SECTION --- */}
+      <div className="w-full bg-amber-50 flex flex-col space-x-4 md:flex-row items-center justify-center text-black p-10 md:gap-16">
         <div
-          className="w-full  md:w-100 h-full rounded-full"
+          className="w-full md:w-100 h-full rounded-full"
           data-aos="fade-right"
         >
           <Image
@@ -101,30 +260,26 @@ export default function Home() {
             academically, socially, and emotionally, preparing them to be
             responsible global citizens and lifelong learners. We are committed
             to fostering critical thinking, creativity, and a love for learning,
-            while promoting values of empathy, integrity, and collaboration. Our
-            goal is to equip students with the skills, knowledge, and confidence
-            they need to thrive in an ever-changing world, encouraging them to
-            explore their passions, embrace challenges, and contribute
-            positively to their communities.
+            while promoting values of empathy, integrity, and collaboration.
           </p>
+
           <h2 className="font-semibold text-2xl">Professor David Adewuyi</h2>
           <p>
             With over 20 years of experience in education, Professor Adewuyi is
             dedicated to fostering a love of learning in students and empowering
             them to reach their full potential. He is passionate about
             innovative teaching methods, mentoring young educators, and
-            integrating technology to enhance learning outcomes. Professor
-            Adewuyi has also contributed extensively to educational research,
-            curriculum development, and community outreach programs, shaping
-            generations of learners to become responsible, creative, and
-            lifelong achievers.
+            integrating technology to enhance learning outcomes.
           </p>
-          <button className="bg-[#9B4AD0] text-white py-2.5 px-6 rounded-lg cursor-pointer text-sm md:text-base">
-            <Link href="/About">Learn More About Us</Link>
-          </button>
+
+          <Link
+            href="/About"
+            className="bg-[#9B4AD0] text-white py-2.5 px-6 rounded-lg cursor-pointer text-sm md:text-base hover:bg-[#7a35a7] transition"
+          >
+            Learn More About Us
+          </Link>
         </div>
       </div>
-
       {/* Academic Excellence Section */}
       <div className="w-full bg-white text-black flex flex-col items-center  md:p-20 space-y-8">
         <h2 className="font-semibold text-2xl md:text-3xl" data-aos="fade-up">
@@ -245,7 +400,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       {/* Testimonials Section */}
       <div className="bg-amber-50 py-20 px-6 md:px-20 text-center">
         <h2 className="text-3xl font-bold text-black mb-10" data-aos="fade-up">
