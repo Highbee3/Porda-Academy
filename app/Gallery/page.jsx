@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Gallery = () => {
   useEffect(() => {
@@ -74,9 +75,9 @@ const Gallery = () => {
         <p className="text-gray-600 max-w-xl mx-auto mb-6">
           From classroom learning to extracurricular adventures — our students shine in every area of life.
         </p>
-        <button className="px-6 py-3 bg-[#673E73] hover:bg-[#673E73] text-white rounded-lg shadow-md transition">
+        <Link href="/Admission" className="px-6 py-3 bg-[#673E73] hover:bg-[#673E73] text-white rounded-lg shadow-md transition">
           Learn More About Our Programs
-        </button>
+        </Link>
       </div>
     </div>
   );

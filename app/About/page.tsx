@@ -37,12 +37,19 @@ const About = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 1 }}
-            className="text-[1rem] leading-relaxed text-gray-200 max-w-3xl mx-auto"
+            className="text-[1rem] leading-relaxed text-gray-200 w-full mx-auto"
           >
-            Welcome to <strong>Proda Primary & Secondary School</strong> — a
-            vibrant community where curiosity, creativity, and character come
-            together. We inspire young minds to reach their fullest potential
-            through innovative education and strong moral guidance.
+            <strong>Proda Primary & Secondary School</strong>a K-12 inclusive
+            haven, ignites curiosity via inquiry-based, real-world learning;
+            unleashes creativity through arts, tech, and drama in dedicated
+            studios; and forges character with mentorship emphasizing empathy,
+            integrity, and service. Primary (K-5) builds literacy, numeracy, and
+            science foundations playfully, while secondary (6-12) advances STEM,
+            humanities, and leadership for future success. A collaborative
+            community of passionate educators, parents, and students thrives on
+            modern campuses with tech classrooms, libraries, and sports hubs,
+            fostering resilient, compassionate leaders beyond exams visit to
+            witness the transformation.
           </motion.p>
 
           {/* Three Cards */}
@@ -78,51 +85,49 @@ const About = () => {
         </motion.div>
       </div>
 
-     {/* FOUNDER SECTION */}
-<section className="py-16 px-6 bg-white">
-  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      {/* FOUNDER SECTION */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          {/* Founder Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="flex justify-center"
+          >
+            <Image
+              src="https://res.cloudinary.com/dlzjjxtsd/image/upload/proda-removebg-preview_gjinxk.png"
+              alt="Founder"
+              width={500}
+              height={500}
+              className="rounded-2xl shadow-lg object-cover w-full max-w-[350px] md:max-w-[420px]"
+            />
+          </motion.div>
 
-    {/* Founder Image */}
-    <motion.div
-      initial={{ opacity: 0, x: -40 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 }}
-      viewport={{ once: true }}
-      className="flex justify-center"
-    >
-      <Image
-        src="https://res.cloudinary.com/dlzjjxtsd/image/upload/proda-removebg-preview_gjinxk.png"
-        alt="Founder"
-        width={500}
-        height={500}
-        className="rounded-2xl shadow-lg object-cover w-full max-w-[350px] md:max-w-[420px]"
-      />
-    </motion.div>
+          {/* Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="text-center md:text-left"
+          >
+            <h2 className="text-3xl font-bold text-[#673E73] mb-4">
+              Message from the Founder
+            </h2>
 
-    {/* Text Content */}
-    <motion.div
-      initial={{ opacity: 0, x: 40 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 }}
-      viewport={{ once: true }}
-      className="text-center md:text-left"
-    >
-      <h2 className="text-3xl font-bold text-[#673E73] mb-4">
-        Message from the Founder
-      </h2>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              “At Proda Academy, we believe education goes beyond academics. It
+              is about instilling values, discipline, and creativity in every
+              child. Our mission is to raise young minds that will transform
+              their communities and the world.”
+            </p>
 
-      <p className="text-gray-600 leading-relaxed mb-4">
-        “At Proda Academy, we believe education goes beyond academics. It
-        is about instilling values, discipline, and creativity in every
-        child. Our mission is to raise young minds that will transform
-        their communities and the world.”
-      </p>
-
-      <p className="text-amber-500 font-semibold">— The Founder</p>
-    </motion.div>
-  </div>
-</section>
-
+            <p className="text-amber-500 font-semibold">— The Founder</p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* CORE VALUES */}
       <section className="py-16 bg-linear-to-r from-blue-900 to-amber-700 text-white text-center">
