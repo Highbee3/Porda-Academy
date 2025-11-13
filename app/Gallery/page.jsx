@@ -27,7 +27,7 @@ const Gallery = () => {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-gray-50 text-gray-800 py-20 px-6 md:px-20">
+    <div className="w-full min-h-screen bg-gray-50 text-gray-800 py-20 px-6 md:px-20 overflow-hidden">
       {/* Header Section */}
       <div className="text-center mb-16">
         <h1

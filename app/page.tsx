@@ -133,7 +133,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="overflow-x-hidden">
+    <main className="overflow-hidden">
       {/* --- Prevent slide stacking (only active slide visible) --- */}
       <style jsx global>{`
         .swiper-slide {

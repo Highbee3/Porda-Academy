@@ -15,7 +15,7 @@ export default function Academics() {
   }, []);
 
   return (
-    <div className="bg-gray-50 text-gray-800">
+    <div className="bg-gray-50 text-gray-800 overflow-hidden">
       {/* HERO SECTION */}
       <motion.section
         initial={{ opacity: 0 }}

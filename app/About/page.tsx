@@ -5,7 +5,7 @@ import { FaLightbulb, FaHeart, FaUsers } from "react-icons/fa";
 
 const About = () => {
   return (
-    <main className=" text-gray-800">
+    <main className=" text-gray-800 overflow-hidden">
       {/* HERO SECTION */}
       <div className="relative min-h-screen flex items-center justify-center text-center px-6 py-16 overflow-hidden mt-20">
         <Image
